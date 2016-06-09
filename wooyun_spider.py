@@ -84,7 +84,7 @@ def holes(url, name, path):
         # print len(list_name), list_name
         # print len(list_status), list_status
         for names in range(len(list_name)):
-        	# 文件夹命名错误规避（/\*?<>:|）
+            # 文件夹命名错误规避（/\*?<>:|）
             list_name[names] = list_name[names].replace('/', 'or').replace('\\', 'or').replace('*', '').replace('?', '').replace(':', '').replace('<', '').replace('>', '').replace('|', '').replace('"', '').rstrip()
             # ../ 规避
             if list_name[names][-1] == '.':
