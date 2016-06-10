@@ -85,7 +85,7 @@ def holes(url, name, path):
         # print len(list_status), list_status
         for names in range(len(list_name)):
             # 文件夹命名错误规避（/\*?<>:|）
-            list_name[names] = list_name[names].replace('/', 'or').replace('\\', 'or').replace('*', '').replace('?', '').replace(':', '').replace('<', '').replace('>', '').replace('|', '').replace('"', '').rstrip()
+            list_name[names] = list_name[names].replace('/', 'or').replace('\\', 'or').replace('*', '').replace('?', '').replace(':', '').replace('<', '').replace('>', '').replace('|', '').replace('"', '').strip()
             # ../ 规避
             if list_name[names][-1] == '.':
                 list_name[names] = list_name[names].replace('.', '。')
@@ -122,7 +122,7 @@ for i in range(16, page):
     # print corps_link
     # print corps_name
     for j in range(len(corps_link)):
-        holes(url_root+corps_link[j], corps_name[j].rstrip(), path_root)
+        holes(url_root+corps_link[j], corps_name[j].strip(), path_root)
 
 
 
